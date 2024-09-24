@@ -1,0 +1,5 @@
+MONGO_USER=mtg_user
+MONGO_PASS=mtg_pass
+OPENAI_API_KEY=
+MONGO_HOST=mongodb:27017
+IMG_PATH=/data/cards/

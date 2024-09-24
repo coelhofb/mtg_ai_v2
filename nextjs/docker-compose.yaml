@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  node:
+   image: node:alpine
+   #network_mode: service:mongodb
+   hostname: frontend
+   volumes:
+   - ../volume/cards:/data/cards
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ./Dockerfile
+    image: mtg_ai/backend
+    restart: always
+    #network_mode: service:mongodb
+    hostname: backend
+    # ports:
+    # - "80:80"
+    volumes:
+    - ../volume/:/data/
+    - ../backend/app/:/code/app/
+   
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mtg_user
+      MONGO_INITDB_ROOT_PASSWORD: mtg_pass
+    hostname: mongodb
+    ports:
+    - "27017:27017"
+    volumes:
+    - ../volume/db/mongodb/data:/data/db
+  
+  
+  
+  
+  

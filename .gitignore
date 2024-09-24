@@ -1,0 +1,25 @@
+.github
+.devcontainer
+frontend
+volume/cards/*
+volume/db/mongodb/data/*
+volume/.env
+.DS_Store
+
+######Python#########
+
+__pycache__/
+# Environments
+#.env
+.venv
+.env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+######NodeJS#########
+# Dependency directories
+node_modules/
+jspm_packages/
